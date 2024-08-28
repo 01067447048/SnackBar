@@ -62,6 +62,25 @@ class MainActivity : ComponentActivity() {
                     }
                 }
 
+                /**
+                 * one-off anti-pattern
+                 */
+//                LaunchedEffect(key1 = true) {
+//                    SnackbarController.events.collect { event ->
+//                        snackbarHostState.currentSnackbarData?.dismiss()
+//
+//                        val result = snackbarHostState.showSnackbar(
+//                            message = event.message,
+//                            actionLabel = event.action?.name,
+//                            duration = SnackbarDuration.Long
+//                        )
+//
+//                        if (result == SnackbarResult.ActionPerformed) {
+//                            event.action?.action?.invoke()
+//                        }
+//                    }
+//                }
+
                 Scaffold(
                     snackbarHost = {
                         SnackbarHost(hostState = snackbarHostState)
